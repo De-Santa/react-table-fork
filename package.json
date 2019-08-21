@@ -28,8 +28,8 @@
   "scripts": {
     "build:cjs": "babel src --out-dir lib --source-maps inline",
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es --source-maps inline",
-    "build:umd": "BABEL_ENV=umd rollup -c",
-    "build:umd-min": "BABEL_ENV=umd NODE_ENV=production rollup -c",
+    "build:umd": "cross-env BABEL_ENV=umd rollup -c",
+    "build:umd-min": "cross-env BABEL_ENV=umd NODE_ENV=production rollup -c",
     "build:css": "rimraf react-table.css && stylus src/index.styl --compress -o react-table.css && yarn css:autoprefix",
     "css:autoprefix": "postcss --use autoprefixer react-table.css -r",
     "watch": "npm-run-all --parallel watch:*",
