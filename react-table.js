@@ -455,8 +455,8 @@ var Lifecycle = (function (Base) {
     }
 
     createClass(_class, [{
-      key: 'componentWillMount',
-      value: function componentWillMount() {
+      key: 'UNSAFE_componentWillMount',
+      value: function UNSAFE_componentWillMount() {
         this.setStateWithData(this.getDataModel(this.getResolvedState()));
       }
     }, {
@@ -465,8 +465,8 @@ var Lifecycle = (function (Base) {
         this.fireFetchData();
       }
     }, {
-      key: 'componentWillReceiveProps',
-      value: function componentWillReceiveProps(nextProps, nextState) {
+      key: 'UNSAFE_componentWillReceiveProps',
+      value: function UNSAFE_componentWillReceiveProps(nextProps, nextState) {
         var oldState = this.getResolvedState();
         var newState = this.getResolvedState(nextProps, nextState);
 
@@ -1300,8 +1300,8 @@ var ReactTablePagination = function (_Component) {
   }
 
   createClass(ReactTablePagination, [{
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
+    key: 'UNSAFE_componentWillReceiveProps',
+    value: function UNSAFE_componentWillReceiveProps(nextProps) {
       this.setState({ page: nextProps.page });
     }
   }, {
